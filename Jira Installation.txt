@@ -1,0 +1,97 @@
+============
+JIRA
+============
+from Atlassian
+Plan
+Track
+Release
+Report
+Automate
+
+bug,issue,task tracking,
+
+project s/w execution,
+
+service desk
+
+
+===================================
+How to install 
+     JRE 1.8
+rpm packages
+==================================
+java -version
+export JAVA_HOME=/opt/java
+export PATH=/opt/java/bin:$PATH
+
+
+Installation of  JIRA 
+=========================
+Install JAVA first
+---------------------
+yum install wget -y
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+rpm -ivh jdk-8u131-linux-x64.rpm
+java
+
+install jira now
+-----------------
+install with TAR or ZIP file
+-----------------------------
+https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-9.2.0.tar.gz
+or
+https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-9.2.0.zip
+
+tar -xvf atlassian-jira-software-7.13.0.tar.gz or unzip atlassian-jira-software-7.13.0.zip
+mv atlassian-jira-software-7.13.0-standalone jira
+cd jira
+vi ./atlassian-jira/WEB-INF/classes/jira-application.properties
+jira.home =/opt/jira/atlassian-jira
+cd bin/
+./stop-jira.sh
+./start-jira.sh
+
+Server startup logs are located in /opt/jira/logs/catalina.out
+Using CATALINA_BASE:   /opt/jira
+Using CATALINA_HOME:   /opt/jira
+Using CATALINA_TMPDIR: /opt/jira/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/jira/bin/bootstrap.jar:/opt/jira/bin/tomcat-juli.jar
+Using CATALINA_PID:    /opt/jira/work/catalina.pid
+
+		
+
+
+Install with bin file
+----------------------
+https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-9.2.0-x64.bin
+chmod 755 atlassian-jira-software-7.13.0-x64.bin
+$ ./atlassian-jira-software-7.13.0-x64.bin
+
+How to start & stop jira
+$ /etc/init.d/jira stop
+$ /etc/init.d/jira start
+
+Installation Directory: /opt/atlassian/jira
+Home Directory: /var/atlassian/application-data/jira
+HTTP Port: 8080
+RMI Port: 8005
+
+
+
+issue types
+---------------
+Bug,task,subtask,improvement,new features,epic
+
+workflow
+--------todo---in progress--in review--done
+
+
+===============
+jira adm
+applications
+projects
+issues
+addons
+user management--configure email server
+---------------
